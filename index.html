@@ -1,0 +1,41 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blackjack Game (OOP)</title>
+  <link rel="stylesheet" href="styles.css">`
+</head>
+<body>
+  <h1>Blackjack Game</h1>
+  <h4> Dealer must hit on soft 17</h4>
+  <h3>Dealer:</h3>
+  <div class="hand-container" id="dealer-hand-container"></div>
+  <h3>Player:</h3>
+  <div class="hand-container" id="player-hand-container"></div>
+  <div class="hand-container" id="player-split-container"></div>
+  <div id="game-container">
+    <button id="hit-button">Hit</button>
+    <button id="stand-button">Stand</button>
+    <button id="new-hand-button">New Hand</button>
+  </div>
+  <div id="player-bank"></div>
+  <div id="result-container"></div>
+  <script type="module" src="./script.js"></script>
+  <script type="module">
+    // Import game logic
+    import * as game from './script.js';
+
+    // Start the game when the page loads
+    window.onload = function () {
+      game.startGame();
+
+      // Attach event handlers to buttons
+      document.getElementById('hit-button').addEventListener('click', game.hit);
+      document.getElementById('stand-button').addEventListener('click', game.stand);
+      document.getElementById('new-hand-button').addEventListener('click', game.newHand);
+    };
+  </script>
+</body>
+</html>
