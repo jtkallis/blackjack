@@ -22,11 +22,10 @@ function displayGameState() {
   displayHand(dealer.hand.cards, 'dealer-hand-container');
 }
 function split(){
-  console.log(player)
   player.splitHand(deck)
   console.log(player)
   displayHand(player.split[0].cards, 'player-hand-container')
-  displayHand(player.split[1].cards, 'player-hand-container')
+  displayHand(player.split[1].cards, 'player-split-container')
 }
 function displayDealerStartHand(cards, containerId){
   const container = document.getElementById(containerId);
@@ -61,6 +60,9 @@ export function hit() {
   displayGameStateStart();
   if (player.isBust()) {
     document.getElementById('result-container').innerText = 'You are bust! 😞';
+    document.getElementById('hit-button').disabled=true;
+    document.getElementById('stand-button').disabled=true;
+    //stand()
   }
 }
 
@@ -83,6 +85,8 @@ export function stand() {
   document.getElementById('result-container').innerText= '';
 }
 export function newHand() {
+  document.getElementById('hit-button').disabled=false;
+    document.getElementById('stand-button').disabled=false;
   if(document.getElementById('split-button')){
     console.log('last hand split')
     let el = document.getElementById('split-button')

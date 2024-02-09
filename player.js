@@ -11,6 +11,10 @@ export default class Player {
       const card = deck.dealCard();
       this.hand.addCard(card);
     }
+    hitSplit(deck,hand){
+      const card = deck.dealCard();
+      this.split[hand].addCard()
+    }
     isBust() {
       return this.hand.calculateValue() > 21;
     }
