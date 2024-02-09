@@ -20,14 +20,17 @@ export default class Hand {
       for(const card of this.cards){
           if(card.rank === 'A'){
             aces +=1;
+            value+=1;
           }
           else{
             value +=card.getValue();
           }
       }
-      while(aces){
-         ((value + 11) > 21) ? value += 1 : value += 11;
-          aces--;
+      if((aces>0)&&(value+10<=21)){
+      
+          value+=10;
+     
+         aces--;
       }
       return value;
     }

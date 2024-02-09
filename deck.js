@@ -27,7 +27,7 @@ export default class Deck {
 
     dealCard() {
         return this.cards.pop();
-       //return new Card('5','hearts')   
+       //return new Card('A','hearts')   
     }
   }
 
