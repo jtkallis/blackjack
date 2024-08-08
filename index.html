@@ -8,19 +8,23 @@
   <link rel="stylesheet" href="styles.css">`
 </head>
 <body>
-  <h1>Blackjack Game</h1>
+  <h1>$20 Blackjack Game</h1>
   <h4> Dealer must hit on soft 17</h4>
   <h3>Dealer:</h3>
+  <div id="dealer-score"></div>
   <div class="hand-container" id="dealer-hand-container"></div>
-  <h3>Player:</h3>
+  <span>Player:</span>
+  <span id="player-score"></span>
   <div class="hand-container" id="player-hand-container"></div>
   <div class="hand-container" id="player-split-container"></div>
   <div id="game-container">
     <button id="hit-button">Hit</button>
     <button id="stand-button">Stand</button>
     <button id="new-hand-button">New Hand</button>
+    <button id="double-button">Double down</button>
   </div>
   <div id="player-bank"></div>
+ 
   <div id="result-container"></div>
   <script type="module" src="./script.js"></script>
   <script type="module">
@@ -35,6 +39,7 @@
       document.getElementById('hit-button').addEventListener('click', game.hit);
       document.getElementById('stand-button').addEventListener('click', game.stand);
       document.getElementById('new-hand-button').addEventListener('click', game.newHand);
+      document.getElementById('double-button').addEventListener('click', game.double);
     };
   </script>
 </body>

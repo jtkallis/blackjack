@@ -29,8 +29,6 @@ export default class Hand {
       if((aces>0)&&(value+10<=21)){
       
           value+=10;
-     
-         aces--;
       }
       return value;
     }

@@ -39,7 +39,7 @@ class Card {
 
     getValue() {
       if (this.rank === 'A') {
-        return 11;
+        return 1;
       } else if (['K', 'Q', 'J'].includes(this.rank)) {
         return 10;
       } else {
